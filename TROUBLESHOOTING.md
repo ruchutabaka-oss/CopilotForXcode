@@ -17,7 +17,20 @@ common issues:
 
    Please note that GitHub Copilot for Xcode may not work properly if any necessary permissions are missing.
 
-3. Need more help? If these steps don't resolve the issue, please [open an
+3. If you see `No model configuration found` when using Auto model selection in Ask or Agent mode, the bundled Copilot language server may be older than the MAI model requirement. This is a known compatibility issue with outdated bundled LSP versions and can be fixed by replacing the embedded language server binaries with a recent release.
+
+   1. Quit GitHub Copilot for Xcode.
+   2. Download the latest `copilot-language-server-darwin-arm64` package from the [copilot-language-server-release releases](https://github.com/github/copilot-language-server-release/releases).
+   3. Rename the downloaded binary from `copilot-language-server` to `copilot-language-server-arm64`.
+   4. Replace both copies that ship with the app:
+      - `/Applications/GitHub Copilot for Xcode.app/Contents/Resources/`
+      - `/Applications/GitHub Copilot for Xcode.app/Contents/Applications/GitHub Copilot for Xcode Extension.app/Contents/Resources/`
+   5. Make sure the binary is executable (`chmod +x` if needed).
+   6. Re-launch the app and verify that Auto mode works again.
+
+   This is a local workaround for the model selection error, and it is usually required when the app bundle is behind the current language-server version.
+
+4. Need more help? If these steps don't resolve the issue, please [open an
    issue](https://github.com/github/CopilotForXcode/issues/new/choose). Make
    sure to [include logs](#logs) and any other relevant information.
 
