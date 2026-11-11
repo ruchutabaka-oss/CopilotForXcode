@@ -1,12 +1,12 @@
 :root {
     color-scheme: dark;
-    --background: #111114;
-    --surface: #19191d;
-    --surface-light: #222226;
-    --text: #f3f0e9;
-    --muted: #9c9aa0;
-    --accent: #c5f36b;
-    --line: rgba(243, 240, 233, 0.15);
+    --background: hsl(240, 77%, 54%);
+    --surface: hsl(315, 51%, 44%);
+    --surface-light: #2c2cb3;
+    --text: #d3af5d;
+    --muted: #553299;
+    --accent: #97266c;
+    --line: hsla(7, 67%, 45%, 0.76);
     font-family: Inter, "Helvetica Neue", Arial, sans-serif;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
