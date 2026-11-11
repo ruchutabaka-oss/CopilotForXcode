@@ -1,31 +1,35 @@
 # Strona muzyczna
 
-Lekka, statyczna strona do prezentowania, odtwarzania i pobierania własnych
-utworów. Nie wymaga instalowania pakietów ani budowania aplikacji.
+Lekka, responsywna strona artysty do prezentowania, strumieniowego odtwarzania i
+pobierania własnych utworów. Działa jako statyczna strona — nie wymaga instalacji
+pakietów ani procesu budowania.
 
 ## Dodawanie muzyki
 
-1. Skopiuj pliki audio do folderu `music/`.
-2. Otwórz `tracks.js` i dodaj wpis dla każdego utworu do tablicy
-   `window.MUSIC_TRACKS`. Przykład:
+1. Skopiuj swoje pliki audio do folderu `music/`.
+2. Otwórz `tracks.js` i dodaj wpis dla każdego utworu:
 
    ```js
    window.MUSIC_TRACKS = [
        {
            title: "Mój utwór",
-           release: "Single · 2026",
+           release: "Singiel · 2026",
            file: "music/moj-utwor.mp3",
        },
    ];
    ```
 
-3. W `index.html` podmień nazwę artysty, opis i adres kontaktowy. Możesz też
-   umieścić własne zdjęcia i okładki w folderze `covers/` i dostosować stronę.
+   `file` wskazuje ścieżkę do pliku względem `index.html`. Obsługiwane formaty
+   zależą od przeglądarki; MP3 jest dobrym wyborem dla szerokiej zgodności.
+   Przycisk odtwarzania używa wbudowanego odtwarzacza przeglądarki, a link
+   „MP3” umożliwia pobranie pliku.
+3. W `index.html` zmień nazwę artysty, opis i adres e-mail. Dodaj swoje linki
+   społecznościowe i skopiuj pliki okładek do `covers/`, jeśli chcesz rozszerzyć
+   projekt o własne grafiki.
 
-Każdy wpis na liście otrzymuje odtwarzacz i bezpośredni link do pobrania
-pliku. Stronę oraz pliki audio należy opublikować razem na hostingu
-obsługującym statyczne pliki. Link do pobrania pobiera plik pojedynczego
-utworu — strona nie tworzy archiwum ZIP.
+Strona udostępnia bezpośrednie pliki do pobrania — nie tworzy archiwum ZIP.
+Publikując ją, umieść razem pliki strony oraz katalog `music/` na hostingu
+obsługującym statyczne pliki. Udostępniaj tylko nagrania, do których masz prawa.
 
 ## Podgląd lokalny
 
@@ -35,5 +39,5 @@ W katalogu `music-site/` uruchom:
 python3 -m http.server 8000
 ```
 
-Następnie otwórz `http://localhost:8000`. Zatrzymaj serwer skrótem
+Otwórz `http://localhost:8000` w przeglądarce. Zatrzymaj serwer skrótem
 `Ctrl+C`.
